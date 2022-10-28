@@ -7,17 +7,20 @@ import FlexBox from "./pages/FLexBox";
 import Position from "./pages/Position";
 import PropsDinamis from "./pages/PropsDinamis";
 import SetCounter from "./pages/StateDinamis";
+import KomunikasiComponent from "./pages/KomunikasiComponent";
 
 const App = () => {
   return (
     <View>
       <ScrollView>
-        {/* <StylingComponent />
-        <SimpleComponent /> 
-        <FlexBox />
-        <Position /> */}
+        {/* <StylingComponent /> */}
+        {/* <SimpleComponent />  */}
+        {/* <FlexBox /> */}
+        {/* <Position /> */}
         {/* <PropsDinamis /> */}
-        <SetCounter />
+        {/* <SetCounter /> */}
+        <KomunikasiComponent />
+        <KomunikasiComponent />
       </ScrollView>
     </View>
   )
