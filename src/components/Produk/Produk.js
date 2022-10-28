@@ -29,7 +29,6 @@ const Styling = StyleSheet.create({
 });
 
 const Card = (props) => {
-    console.log(props.onButtonPress);
   return (  
     <View style={{padding:12, backgroundColor:'orange', marginTop:20,marginLeft:20, width:212, borderRadius:8}}>
       <Image source={Laptop} style={{ width: 188, height: 107, borderRadius: 8 }} />
