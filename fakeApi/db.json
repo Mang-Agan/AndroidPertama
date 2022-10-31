@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "nama": "galih",
+      "email": "galih@gmail.com",
+      "bidang": "IT",
+      "id": 1
+    },
+    {
+      "nama": "agus",
+      "email": "Agus@gmail.com",
+      "bidang": "olahraga",
+      "id": 2
+    },
+    {
+      "nama": "haura",
+      "email": "haura@gmail.com",
+      "bidang": "kesehatan",
+      "id": 5
+    },
+    {
+      "nama": "wendi",
+      "email": "wendi@gmail.com",
+      "bidang": "fiber",
+      "id": 6
+    }
+  ]
+}

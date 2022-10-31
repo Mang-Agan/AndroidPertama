@@ -9,7 +9,7 @@ import Laptop from "../../assets/images/laptop.jpg";
 
 const Story = (props) => {
     return (
-        <View style={{marginRight:20}}>
+        <View style={{ marginRight: 20 }}>
             <Image source={props.image} style={{ width: 75, height: 75, borderRadius: 75 / 2 }} />
             <Text style={{maxWidth:75, textAlign:'center'}}>{props.text}</Text>
         </View>

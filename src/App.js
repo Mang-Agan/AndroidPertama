@@ -8,6 +8,10 @@ import Position from "./pages/Position";
 import PropsDinamis from "./pages/PropsDinamis";
 import SetCounter from "./pages/StateDinamis";
 import KomunikasiComponent from "./pages/KomunikasiComponent";
+import AndroidSvg from "./pages/AndroidSvg";
+import CallApi from "./pages/CallApiVanilla";
+import CallApiAxios from "./pages/CallApiAxios";
+import HitApi from "./pages/LocalApi";
 
 const App = () => {
   return (
@@ -19,8 +23,11 @@ const App = () => {
         {/* <Position /> */}
         {/* <PropsDinamis /> */}
         {/* <SetCounter /> */}
-        <KomunikasiComponent />
-        <KomunikasiComponent />
+        {/* <KomunikasiComponent /> */}
+        {/* <AndroidSvg /> */}
+        {/* <CallApi /> */}
+        {/* <CallApiAxios /> */}
+        <HitApi />
       </ScrollView>
     </View>
   )
