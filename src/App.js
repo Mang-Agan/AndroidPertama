@@ -12,6 +12,9 @@ import AndroidSvg from "./pages/AndroidSvg";
 import CallApi from "./pages/CallApiVanilla";
 import CallApiAxios from "./pages/CallApiAxios";
 import HitApi from "./pages/LocalApi";
+import TestCamera from "./pages/Camera";
+import TestLocation from "./pages/Location";
+import FaceDetection from "./pages/FaceDetection";
 
 const App = () => {
   return (
@@ -27,7 +30,10 @@ const App = () => {
         {/* <AndroidSvg /> */}
         {/* <CallApi /> */}
         {/* <CallApiAxios /> */}
-        <HitApi />
+        {/* <HitApi /> */}
+        {/* <TestCamera /> */}
+        {/* <TestLocation /> */}
+        <FaceDetection />
       </ScrollView>
     </View>
   )

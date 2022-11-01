@@ -5,14 +5,15 @@ import axios from "axios";
 const HitApi = () => {
 
     useEffect(() => {
-        readData(); 
-    },[]);
+        readData();
+    }, []);
     
     const [nama, setNama] = useState("");
     const [email, setEmail] = useState("");
     const [bidang, setBidang] = useState("");
-
+    const [button, setButton] = useState("Simpan");
     const [users, setUsers] = useState([]);
+    const [users_id, setUsers_id] = useState("");
 
     const postData = () => {
         let data = {
@@ -20,17 +21,34 @@ const HitApi = () => {
             email:email,
             bidang:bidang,
         }
-        
-        axios.post('http://10.0.2.2:3005/users', data).then((result) => {
-            alert("success");
-            setNama("");
-            setEmail("");
-            setBidang("");
 
-            readData();
-        }).catch((er) => {
-            alert('error');
-        });
+        if (button == "Simpan") {
+            axios.post('http://10.0.2.2:3005/users', data).then((result) => {
+                alert("success");
+                setNama("");
+                setEmail("");
+                setBidang("");
+
+                readData();
+            }).catch((er) => {
+                alert('error');
+            });
+        } else {
+            // alert(users_id);
+            axios.put(`http://10.0.2.2:3005/users/${users_id}`, data).then((result) => {
+                alert("success");
+                setNama("");
+                setEmail("");
+                setBidang("");
+
+                 setButton("Simpan");
+                readData();
+            }).catch((er) => {
+                alert('error update');
+            });
+        }
+        
+       
     }
 
     const readData = () => {
@@ -42,52 +60,28 @@ const HitApi = () => {
     }
 
     const updateData = (props) => {
-        const [updateNama, setUpdateNama] = useState(props[0].nama);
-        const [updateEmail, setUpdateEmail] = useState(props[0].email);
-        const [updateBidang, setUpdateBidang] = useState(props[0].bidang);
+        setNama(props.nama);
+        setEmail(props.email);
+        setBidang(props.bidang);
+        setUsers_id(props.id);
 
-        let data = {
-            nama:nama,
-            email:email,
-            bidang:bidang,
-        }
-
-        // axios.put('http://10.0.2.2:3005/users', data).then((result) => {
-        //     alert("success");
-        //     setNama("");
-        //     setEmail("");
-        //     setBidang("");
-
-        //     readData();
-        // }).catch((er) => {
-        //     alert('error');
-        // });
-        // alert('fungsi update');
-        // console.log(props[0])
+        setButton('Update');
     }
 
     return (
         <View style={{ padding: 20 }}>
-            {updateNama !== "" ?
-                 <View>
-                    <TextInput style={StylingApi.Input} placeholder="Name" value={updateNama} onChangeText={(value)=> setUpdateNama(value)}></TextInput>
-                    <TextInput style={StylingApi.Input} placeholder="Email" value={updateEmail} onChangeText={(value)=> setUpdateEmail(value)}></TextInput>
-                    <TextInput style={StylingApi.Input} placeholder="Bidang" value={updateBidang} onChangeText={(value)=> setUpdateBidang(value)}></TextInput>
-                </View>
-            :
+           
                 <View>
                     <TextInput style={StylingApi.Input} placeholder="Name" value={nama} onChangeText={(value)=> setNama(value)}></TextInput>
                     <TextInput style={StylingApi.Input} placeholder="Email" value={email} onChangeText={(value)=> setEmail(value)}></TextInput>
                     <TextInput style={StylingApi.Input} placeholder="Bidang" value={bidang} onChangeText={(value)=> setBidang(value)}></TextInput>
                 </View>
-            }
-           
-
+            
             <View style={{marginTop:20}}>
-                <Button title="Simpan" onPress={postData}></Button>
+                <Button title={button} onPress={postData}></Button>
             </View>
             <View style={{height:2, backgroundColor:'black', marginTop:5, marginBottom:5}}></View>
-            <Item users={users} readData={readData} updateData={updateData} />
+            <Item users={users} readData={readData} updateData={()=>updateData(users[0])} />
         </View>
     )
 }
@@ -121,7 +115,7 @@ const Item = (props) => {
             {props.users.length > 0 ? 
                 props.users.map((item, index) => {
                     return (
-                        <View style={{ margin: 10 }}> 
+                        <View style={{ margin: 10 }} key={index}> 
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                 <View>
                                     <Text>{item.nama}</Text>
@@ -136,9 +130,7 @@ const Item = (props) => {
                 })
            :
            <View>     
-               <Text>Nama : Galih</Text>
-               <Text>Email : Email</Text>
-               <Text>Bidang : IT</Text>
+               <Text style={{textAlign:'center'}}>Belum Ada Data</Text>
            </View>
            }
         </View>
