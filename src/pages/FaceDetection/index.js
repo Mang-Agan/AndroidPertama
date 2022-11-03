@@ -1,11 +1,11 @@
 import React from "react";
 import { Text, View } from "react-native";
-// import TestCamera from "./Camera/index";
+import TestCamera from "./Camera";
 
 const FaceDetection = () => {
     return (
         <View>
-            <Text>Face Detection</Text>
+            <TestCamera />
         </View>
     )
 }

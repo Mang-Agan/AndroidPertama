@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "681797567636",
+    "project_id": "react-native-face-detect-a12a3",
+    "storage_bucket": "react-native-face-detect-a12a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681797567636:android:9dff1cd459f5c77bb62081",
+        "android_client_info": {
+          "package_name": "com.projectsatu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681797567636-2ibjb500192jl72ikjqhat930ab3pmlg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA59u0iFQOcw7a6OIuviTZz_VH3tbZuCPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681797567636-2ibjb500192jl72ikjqhat930ab3pmlg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

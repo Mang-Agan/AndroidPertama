@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View,ScrollView } from "react-native";
+import { View,ScrollView, Dimensions, SafeAreaView } from "react-native";
 import StylingComponent from "./pages/StylingComponent";
 import SimpleComponent from "./pages/SimpleComponent";
 import FlexBox from "./pages/FLexBox";
@@ -15,11 +15,18 @@ import HitApi from "./pages/LocalApi";
 import TestCamera from "./pages/Camera";
 import TestLocation from "./pages/Location";
 import FaceDetection from "./pages/FaceDetection";
+import AbsensiApp from "./pages/AbsensiApp";
 
 const App = () => {
+  const width = Dimensions.get("window").width;
+  const height = Dimensions.get("window").height;
+
   return (
     <View>
       <ScrollView>
+        <SafeAreaView style={{ backgroundColor: 'orange', height: height + 30, width: width, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <AbsensiApp />
+        </SafeAreaView>
         {/* <StylingComponent /> */}
         {/* <SimpleComponent />  */}
         {/* <FlexBox /> */}
@@ -33,7 +40,7 @@ const App = () => {
         {/* <HitApi /> */}
         {/* <TestCamera /> */}
         {/* <TestLocation /> */}
-        <FaceDetection />
+        {/* <FaceDetection /> */}
       </ScrollView>
     </View>
   )
