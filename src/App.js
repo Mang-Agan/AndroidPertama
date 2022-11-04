@@ -24,9 +24,9 @@ const App = () => {
   return (
     <View>
       <ScrollView>
-        <SafeAreaView style={{ backgroundColor: 'orange', height: height + 30, width: width, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ backgroundColor: 'orange', height: height + 30, width: width, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <AbsensiApp />
-        </SafeAreaView>
+        </View>
         {/* <StylingComponent /> */}
         {/* <SimpleComponent />  */}
         {/* <FlexBox /> */}
